@@ -8,7 +8,7 @@ export const Shift = database.define("Shift", {
         defaultValue: DataTypes.UUIDV4
     },
     name: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     inActive: {

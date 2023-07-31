@@ -3,7 +3,7 @@ import models from "../models/index.js";
 import { errorLogging } from "../helpers/error.js";
 import { Op } from "sequelize";
 
-export const getLocations = async (req, res) => {
+export const getTasks = async (req, res) => {
     try {
         const { search } = req.query;
 
@@ -17,13 +17,13 @@ export const getLocations = async (req, res) => {
             }
         }
 
-        const response = await models.Location.findAll({
+        const response = await models.Task.findAll({
             order: [["name", "ASC"]],
             where
         });
 
         return res.status(200).json({
-            message: "Success Fetch Locations!",
+            message: "Success Fetch Tasks!",
             data: response
         });
     } catch (err) {
@@ -38,7 +38,7 @@ export const getLocations = async (req, res) => {
     }
 }
 
-export const getActiveLocations = async (req, res) => {
+export const getActiveTasks = async (req, res) => {
     try {
         const { search } = req.query;
 
@@ -55,13 +55,13 @@ export const getActiveLocations = async (req, res) => {
             }
         }
 
-        const response = await models.Location.findAll({
+        const response = await models.Task.findAll({
             order: [["name", "ASC"]],
             where
         });
 
         return res.status(200).json({
-            message: "Success Fetch Active Locations!",
+            message: "Success Fetch Active Tasks!",
             data: response
         });
     } catch (err) {
@@ -76,7 +76,8 @@ export const getActiveLocations = async (req, res) => {
     }
 }
 
-export const createLocation = async (req, res) => {
+
+export const createTask = async (req, res) => {
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -93,14 +94,14 @@ export const createLocation = async (req, res) => {
         const { name } = req.body;
         const { username } = req.decoded;
 
-        const response = await models.Location.create({
+        const response = await models.Task.create({
             name,
             createdBy: username,
             updatedBy: username
         });
 
         return res.status(200).json({
-            message: `Success Create Location!`,
+            message: `Success Create Task!`,
             data: response
         });
     } catch (err) {
@@ -115,7 +116,7 @@ export const createLocation = async (req, res) => {
     }
 }
 
-export const updateLocation = async (req, res) => {
+export const updateTask = async (req, res) => {
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -132,14 +133,14 @@ export const updateLocation = async (req, res) => {
         const { id, name, inActive } = req.body;
         const { username } = req.decoded;
 
-        const response = await models.Location.update({
+        const response = await models.Task.update({
             name,
             inActive,
             updatedBy: username
         }, { where: { id } });
 
         return res.status(200).json({
-            message: `Success Update Location!`,
+            message: `Success Update Task!`,
             data: response
         });
     } catch (err) {

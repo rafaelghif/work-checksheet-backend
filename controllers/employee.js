@@ -40,6 +40,46 @@ export const getEmployees = async (req, res) => {
     }
 }
 
+export const getActiveEmployees = async (req, res) => {
+    try {
+        const { search } = req.query;
+
+        let where = {
+            inActive: false
+        }
+
+        if (search) {
+            where = {
+                ...where,
+                [Op.or]: [{
+                    employeeId: { [Op.like]: `%${search}%` }
+                }, {
+                    name: { [Op.like]: `%${search}%` }
+                }]
+            }
+        }
+
+        const response = await models.Employee.findAll({
+            order: [["employeeId", "ASC"]],
+            where
+        });
+
+        return res.status(200).json({
+            message: "Success Fetch Active Employee!",
+            data: response
+        });
+    } catch (err) {
+        errorLogging(err.toString());
+        return res.status(401).json({
+            isExpressValidation: false,
+            data: {
+                title: "Something Wrong!",
+                message: err.toString()
+            }
+        });
+    }
+}
+
 export const createEmployee = async (req, res) => {
     try {
         const errors = validationResult(req);
