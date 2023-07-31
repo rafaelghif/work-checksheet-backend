@@ -1,23 +1,18 @@
 import { DataTypes } from "sequelize";
 import database from "../configs/databases/connection.js";
 
-export const ClientCompany = database.define("ClientCompany", {
+export const ChecksheetDetail = database.define("ChecksheetDetail", {
     id: {
         type: DataTypes.CHAR(36),
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
-    name: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-        unique: true
-    },
-    contactDate: {
-        type: DataTypes.DATE,
+    photoUrl: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    expireDate: {
-        type: DataTypes.DATE,
+    condition: {
+        type: DataTypes.ENUM("Before", "After"),
         allowNull: false
     }
 });
