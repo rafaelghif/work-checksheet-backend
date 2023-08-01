@@ -11,6 +11,11 @@ export const Checksheet = database.define("Checksheet", {
         type: DataTypes.DATE,
         allowNull: false
     },
+    isClean: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
     status: {
         type: DataTypes.ENUM("request", "approve"),
         allowNull: false,
