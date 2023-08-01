@@ -8,7 +8,7 @@ export const Checksheet = database.define("Checksheet", {
         defaultValue: DataTypes.UUIDV4
     },
     date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     isClean: {

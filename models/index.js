@@ -30,6 +30,7 @@ models.ChecksheetDetailTask = ChecksheetDetailTask;
 
 database.sync();
 
+
 models.Employee.hasMany(models.Checksheet);
 models.Checksheet.belongsTo(models.Employee);
 models.Shift.hasMany(models.Checksheet);
@@ -46,8 +47,5 @@ models.ChecksheetDetail.belongsToMany(models.Location, { through: models.Checksh
 
 models.Task.belongsToMany(models.ChecksheetDetail, { through: models.ChecksheetDetailTask, hooks: true });
 models.ChecksheetDetail.belongsToMany(models.Task, { through: models.ChecksheetDetailTask, hooks: true });
-
-models.Task.hasMany(models.ChecksheetDetail);
-models.ChecksheetDetail.belongsTo(models.Task);
 
 export default models;

@@ -2,3 +2,21 @@
 8/1/2023, 12:34:13 PM: Error: unauthorized_client
 8/1/2023, 12:37:09 PM: Error: unauthorized_client
 8/1/2023, 3:35:44 PM: Error: internal_failure
+8/1/2023, 6:16:57 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:17:49 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:18:13 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:18:54 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:20:04 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:20:35 PM: ReferenceError: files is not defined
+8/1/2023, 6:21:12 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:21:52 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:22:20 PM: SequelizeValidationError: notNull Violation: ChecksheetPicture.photoUrl cannot be null
+8/1/2023, 6:26:00 PM: TypeError: Cannot read properties of undefined (reading 'filename')
+8/1/2023, 6:26:25 PM: TypeError: Cannot read properties of undefined (reading 'filename')
+8/1/2023, 7:08:56 PM: ReferenceError: connectionDatabase is not defined
+8/1/2023, 7:09:35 PM: ReferenceError: QueryTypes is not defined
+8/1/2023, 7:22:09 PM: ReferenceError: connectionDatabase is not defined
+8/1/2023, 7:37:16 PM: SequelizeDatabaseError: Unknown column 'Location.name' in 'where clause'
+8/1/2023, 7:37:31 PM: SequelizeDatabaseError: Unknown column 'ChecksheetDetail->Location.name' in 'where clause'
+8/1/2023, 7:37:33 PM: SequelizeDatabaseError: Unknown column 'ChecksheetDetail->Location.name' in 'where clause'
+8/1/2023, 8:57:39 PM: SequelizeDatabaseError: Unknown column 'Checksheet.request' in 'where clause'
