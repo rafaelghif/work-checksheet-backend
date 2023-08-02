@@ -1,0 +1,46 @@
+module.exports = {
+    apps: [{
+        name: "Electronic Work Request",
+        script: "index.js",
+        env: {
+            APP_ENV: "production",
+            APP_PORT: 8080,
+            JWT_KEY: "$2a$10$IbftkRjB1HOZPoNOybwX6OnvhKYIIlJhej0HCEByRaSZlr0WmlWvi",
+            DEV_DATABASE_HOST: "localhost",
+            DEV_DATABASE_PORT: 3306,
+            DEV_DATABASE_NAME: "work-checksheet",
+            DEV_DATABASE_USERNAME: "root",
+            DEV_DATABASE_PASSWORD: "",
+            STAG_DATABASE_HOST: "localhost",
+            STAG_DATABASE_PORT: 3306,
+            STAG_DATABASE_NAME: "work-checksheet",
+            STAG_DATABASE_USERNAME: "root",
+            STAG_DATABASE_PASSWORD: "",
+            PROD_DATABASE_HOST: "localhost",
+            PROD_DATABASE_PORT: 3306,
+            PROD_DATABASE_NAME: "work-checksheet",
+            PROD_DATABASE_USERNAME: "root",
+            PROD_DATABASE_PASSWORD: "Adm!n@23*"
+        },
+        env_production: {
+            APP_ENV: "production",
+            APP_PORT: 8080,
+            JWT_KEY: "$2a$10$IbftkRjB1HOZPoNOybwX6OnvhKYIIlJhej0HCEByRaSZlr0WmlWvi",
+            DEV_DATABASE_HOST: "localhost",
+            DEV_DATABASE_PORT: 3306,
+            DEV_DATABASE_NAME: "work-checksheet",
+            DEV_DATABASE_USERNAME: "root",
+            DEV_DATABASE_PASSWORD: "",
+            STAG_DATABASE_HOST: "localhost",
+            STAG_DATABASE_PORT: 3306,
+            STAG_DATABASE_NAME: "work-checksheet",
+            STAG_DATABASE_USERNAME: "root",
+            STAG_DATABASE_PASSWORD: "",
+            PROD_DATABASE_HOST: "localhost",
+            PROD_DATABASE_PORT: 3306,
+            PROD_DATABASE_NAME: "work-checksheet",
+            PROD_DATABASE_USERNAME: "root",
+            PROD_DATABASE_PASSWORD: "Adm!n@23*"
+        }
+    }],
+};
