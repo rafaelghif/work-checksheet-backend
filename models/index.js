@@ -30,7 +30,6 @@ models.ChecksheetDetailTask = ChecksheetDetailTask;
 
 database.sync();
 
-
 models.Employee.hasMany(models.Checksheet);
 models.Checksheet.belongsTo(models.Employee);
 models.Shift.hasMany(models.Checksheet);
