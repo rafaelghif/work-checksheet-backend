@@ -19,11 +19,11 @@ const databaseConfig = {
         password: process.env.STAG_DATABASE_PASSWORD
     },
     production: {
-        host: process.env.DEV_DATABASE_HOST,
-        port: process.env.DEV_DATABASE_PORT,
-        name: process.env.DEV_DATABASE_NAME,
-        username: process.env.DEV_DATABASE_USERNAME,
-        password: process.env.DEV_DATABASE_PASSWORD
+        host: process.env.PROD_DATABASE_HOST,
+        port: process.env.PROD_DATABASE_PORT,
+        name: process.env.PROD_DATABASE_NAME,
+        username: process.env.PROD_DATABASE_USERNAME,
+        password: process.env.PROD_DATABASE_PASSWORD
     }
 }
 

@@ -6,7 +6,7 @@ import { createTaskRule, updateTaskRule } from "../validations/task.js";
 const taskRouter = Router();
 
 taskRouter.get("/", [authVerify, getTasks]);
-taskRouter.get("/active", [authVerify, getActiveTasks]);
+taskRouter.get("/active", [getActiveTasks]);
 taskRouter.post("/", [authVerify, createTaskRule, createTask]);
 taskRouter.patch("/", [authVerify, updateTaskRule, updateTask]);
 

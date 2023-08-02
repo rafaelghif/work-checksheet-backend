@@ -24,11 +24,11 @@ models.ChecksheetDetailLocation = ChecksheetDetailLocation;
 models.ChecksheetPicture = ChecksheetPicture;
 models.ChecksheetDetailTask = ChecksheetDetailTask;
 
-// database.sync({ force: true }).then(async () => {
-//     await initialData();
-// });
+database.sync({ force: true }).then(async () => {
+    await initialData();
+});
 
-database.sync();
+// database.sync();
 
 models.Employee.hasMany(models.Checksheet);
 models.Checksheet.belongsTo(models.Employee);

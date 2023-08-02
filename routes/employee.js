@@ -6,7 +6,7 @@ import { authVerify } from "../middlewares/auth.js";
 const employeeRouter = Router();
 
 employeeRouter.get("/", [authVerify, getEmployees]);
-employeeRouter.get("/active", [authVerify, getActiveEmployees]);
+employeeRouter.get("/active", [getActiveEmployees]);
 employeeRouter.post("/", [authVerify, createEmployeeRule, createEmployee]);
 employeeRouter.patch("/", [authVerify, updateEmployeeRule, updateEmployee]);
 

@@ -6,7 +6,7 @@ import { createShiftRule, updateShiftRule } from "../validations/shift.js";
 const shiftRouter = Router();
 
 shiftRouter.get("/", [authVerify, getShifts]);
-shiftRouter.get("/active", [authVerify, getActiveShifts]);
+shiftRouter.get("/active", [getActiveShifts]);
 shiftRouter.post("/", [authVerify, createShiftRule, createShift]);
 shiftRouter.patch("/", [authVerify, updateShiftRule, updateShift]);
 

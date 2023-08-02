@@ -6,7 +6,7 @@ import { createLocation, getActiveLocations, getLocations, updateLocation } from
 const locationRouter = Router();
 
 locationRouter.get("/", [authVerify, getLocations]);
-locationRouter.get("/active", [authVerify, getActiveLocations]);
+locationRouter.get("/active", [getActiveLocations]);
 locationRouter.post("/", [authVerify, createLocationRule, createLocation]);
 locationRouter.patch("/", [authVerify, updateLocationRule, updateLocation]);
 

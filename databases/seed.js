@@ -11,18 +11,36 @@ export const initialData = async () => {
     });
 
     await models.User.create({
-        username: "supervisor",
-        password: "1x4%i0$To",
-        name: "Supervisor",
+        username: "heffi",
+        password: "heffi01",
+        name: "Heffi Heriyanto",
         role: "Administrator",
         createdBy: "rafaelghifari",
         updatedBy: "rafaelghifari"
     });
 
     await models.User.create({
-        username: "client",
-        password: "1x4%i0$To",
-        name: "Client",
+        username: "warsan",
+        password: "warsan01",
+        name: "Warsan",
+        role: "Administrator",
+        createdBy: "rafaelghifari",
+        updatedBy: "rafaelghifari"
+    });
+
+    await models.User.create({
+        username: "santong",
+        password: "santong01",
+        name: "Santong",
+        role: "Administrator",
+        createdBy: "rafaelghifari",
+        updatedBy: "rafaelghifari"
+    });
+
+    await models.User.create({
+        username: "josmer",
+        password: "josmer01",
+        name: "josmer",
         role: "Client",
         createdBy: "rafaelghifari",
         updatedBy: "rafaelghifari"
