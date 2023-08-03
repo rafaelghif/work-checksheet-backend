@@ -1,6 +1,6 @@
 import database from "../configs/databases/connection.js";
 import { initialData } from "../databases/seed.js";
-import { Checksheet } from "./checksheet.js";
+import { Checksheet } from "./Checksheet.js";
 import { ChecksheetDetail } from "./ChecksheetDetail.js";
 import { ChecksheetDetailLocation } from "./ChecksheetDetailLocation.js";
 import { ChecksheetDetailTask } from "./ChecksheetDetailTask.js";
