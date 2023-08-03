@@ -6,18 +6,20 @@ import { authVerify } from "../middlewares/auth.js";
 import { approveChecksheet, createChecksheet, getCheckSheet, getMonthChecksheet, getYearChecksheet } from "../controllers/checksheet.js";
 import { approveChecksheetRule, createChecksheetRule, getCheckSheetRule } from "../validations/checksheet.js";
 
+const allowedImageTypes = /jpeg|jpg|png|gif|svg/;
+
 const storage = multer.diskStorage({
     destination: 'public/images/sb2',
     filename: function (req, file, cb) {
-        const fileTypes = /jpeg|jpg|png|gif|svg/;
-        const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
-        const originalName = file.originalname;
-        const uniqueFilename = `${uuidv4()}${path.extname(originalName)}`;
+        
+        const extName = allowedImageTypes.test(path.extname(file.originalname).toLowerCase());
+        const mimeType = allowedImageTypes.test(file.mimetype);
 
-        if (extName) {
+        if (mimeType && extName) {
+            const uniqueFilename = `${uuidv4()}${path.extname(file.originalname)}`;
             cb(null, uniqueFilename);
         } else {
-            cb("Error: You can Only Upload Images!!");
+            cb(new Error("You can only upload images with jpeg, jpg, png, gif, or svg formats."));
         }
     },
 });
