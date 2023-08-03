@@ -9,9 +9,16 @@ import { approveChecksheetRule, createChecksheetRule, getCheckSheetRule } from "
 const storage = multer.diskStorage({
     destination: 'public/images/sb2',
     filename: function (req, file, cb) {
+        const fileTypes = /jpeg|jpg|png|gif|svg/;
+        const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
         const originalName = file.originalname;
         const uniqueFilename = `${uuidv4()}${path.extname(originalName)}`;
-        cb(null, uniqueFilename);
+
+        if (extName) {
+            cb(null, uniqueFilename);
+        } else {
+            cb("Error: You can Only Upload Images!!");
+        }
     },
 });
 
