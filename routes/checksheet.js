@@ -32,6 +32,6 @@ checksheetRouter.get("/get/year/:year/month/:month/role/:role", [authVerify, get
 checksheetRouter.get("/year", [authVerify, getYearChecksheet]);
 checksheetRouter.get("/month", [authVerify, getMonthChecksheet]);
 checksheetRouter.post("/approve", [authVerify, approveChecksheetRule, approveChecksheet]);
-checksheetRouter.post("/create", [authVerify, upload.array("pictures[]", 15), createChecksheetRule, createChecksheet]);
+checksheetRouter.post("/create", [upload.array("pictures[]", 15), createChecksheetRule, createChecksheet]);
 
 export default checksheetRouter;
