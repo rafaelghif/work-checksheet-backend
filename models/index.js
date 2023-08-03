@@ -30,21 +30,21 @@ database.sync({ force: true }).then(async () => {
 
 // database.sync();
 
-models.Employee.hasMany(models.Checksheet);
-models.Checksheet.belongsTo(models.Employee);
-models.Shift.hasMany(models.Checksheet);
-models.Checksheet.belongsTo(models.Shift);
+models.Employee.hasMany(models.Checksheet, { onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.Checksheet.belongsTo(models.Employee,);
+models.Shift.hasMany(models.Checksheet, { onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.Checksheet.belongsTo(models.Shift, { onDelete: "CASCADE", onUpdate: "CASCADE" });
 
-models.Checksheet.hasMany(models.ChecksheetDetail);
-models.ChecksheetDetail.belongsTo(models.Checksheet);
+models.Checksheet.hasMany(models.ChecksheetDetail, { onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.ChecksheetDetail.belongsTo(models.Checksheet, { onDelete: "CASCADE", onUpdate: "CASCADE" });
 
-models.Checksheet.hasMany(models.ChecksheetPicture);
-models.ChecksheetPicture.belongsTo(models.Checksheet);
+models.Checksheet.hasMany(models.ChecksheetPicture, { onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.ChecksheetPicture.belongsTo(models.Checksheet, { onDelete: "CASCADE", onUpdate: "CASCADE" });
 
-models.Location.belongsToMany(models.ChecksheetDetail, { through: models.ChecksheetDetailLocation, hooks: true });
-models.ChecksheetDetail.belongsToMany(models.Location, { through: models.ChecksheetDetailLocation, hooks: true });
+models.Location.belongsToMany(models.ChecksheetDetail, { through: models.ChecksheetDetailLocation, hooks: true, onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.ChecksheetDetail.belongsToMany(models.Location, { through: models.ChecksheetDetailLocation, hooks: true, onDelete: "CASCADE", onUpdate: "CASCADE" });
 
-models.Task.belongsToMany(models.ChecksheetDetail, { through: models.ChecksheetDetailTask, hooks: true });
-models.ChecksheetDetail.belongsToMany(models.Task, { through: models.ChecksheetDetailTask, hooks: true });
+models.Task.belongsToMany(models.ChecksheetDetail, { through: models.ChecksheetDetailTask, hooks: true, onDelete: "CASCADE", onUpdate: "CASCADE" });
+models.ChecksheetDetail.belongsToMany(models.Task, { through: models.ChecksheetDetailTask, hooks: true, onDelete: "CASCADE", onUpdate: "CASCADE" });
 
 export default models;
