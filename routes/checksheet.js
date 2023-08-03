@@ -6,21 +6,12 @@ import { authVerify } from "../middlewares/auth.js";
 import { approveChecksheet, createChecksheet, getCheckSheet, getMonthChecksheet, getYearChecksheet } from "../controllers/checksheet.js";
 import { approveChecksheetRule, createChecksheetRule, getCheckSheetRule } from "../validations/checksheet.js";
 
-const allowedImageTypes = /jpeg|jpg|png|gif|svg/;
-
 const storage = multer.diskStorage({
-    destination: "public/images/sb2",
+    destination: 'public/images/sb2',
     filename: function (req, file, cb) {
-
-        const extName = allowedImageTypes.test(path.extname(file.originalname).toLowerCase());
-        const mimeType = allowedImageTypes.test(file.mimetype);
-
-        if (mimeType && extName) {
-            const uniqueFilename = `${uuidv4()}${path.extname(file.originalname)}`;
-            cb(null, uniqueFilename);
-        } else {
-            cb(new Error("You can only upload images with jpeg, jpg, png, gif, or svg formats."));
-        }
+        const originalName = file.originalname;
+        const uniqueFilename = `${uuidv4()}${path.extname(originalName)}`;
+        cb(null, uniqueFilename);
     },
 });
 
@@ -32,6 +23,6 @@ checksheetRouter.get("/get/year/:year/month/:month/role/:role", [authVerify, get
 checksheetRouter.get("/year", [authVerify, getYearChecksheet]);
 checksheetRouter.get("/month", [authVerify, getMonthChecksheet]);
 checksheetRouter.post("/approve", [authVerify, approveChecksheetRule, approveChecksheet]);
-checksheetRouter.post("/create", [upload.array("pictures[]", 15), createChecksheetRule, createChecksheet]);
+checksheetRouter.post("/create", [authVerify, upload.array("pictures[]", 15), createChecksheetRule, createChecksheet]);
 
 export default checksheetRouter;
