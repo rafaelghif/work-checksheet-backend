@@ -185,7 +185,7 @@ export const getCheckSheet = async (req, res) => {
 
 export const getMonthChecksheet = async (req, res) => {
     try {
-        const response = await database.query("SELECT DISTINCT MONTH(date) as monthVal FROM checksheets ORDER BY MONTH(date) ASC", { type: QueryTypes.SELECT });
+        const response = await database.query("SELECT DISTINCT MONTH(date) as monthVal FROM Checksheets ORDER BY MONTH(date) ASC", { type: QueryTypes.SELECT });
         const data = response.map((data) => data.monthVal);
         return res.status(200).json({
             message: "Success Fetch Month Checksheet!",
@@ -205,7 +205,7 @@ export const getMonthChecksheet = async (req, res) => {
 
 export const getYearChecksheet = async (req, res) => {
     try {
-        const response = await database.query("SELECT DISTINCT YEAR(date) as yearVal FROM checksheets ORDER BY YEAR(date) ASC", { type: QueryTypes.SELECT });
+        const response = await database.query("SELECT DISTINCT YEAR(date) as yearVal FROM Checksheets ORDER BY YEAR(date) ASC", { type: QueryTypes.SELECT });
         const data = response.map((data) => data.yearVal);
         return res.status(200).json({
             message: "Success Fetch Month Checksheet!",
