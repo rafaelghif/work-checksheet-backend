@@ -9,9 +9,9 @@ import { approveChecksheetRule, createChecksheetRule, getCheckSheetRule } from "
 const allowedImageTypes = /jpeg|jpg|png|gif|svg/;
 
 const storage = multer.diskStorage({
-    destination: 'public/images/sb2',
+    destination: "public/images/sb2",
     filename: function (req, file, cb) {
-        
+
         const extName = allowedImageTypes.test(path.extname(file.originalname).toLowerCase());
         const mimeType = allowedImageTypes.test(file.mimetype);
 
