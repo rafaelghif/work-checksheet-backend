@@ -138,7 +138,7 @@ export const getCheckSheet = async (req, res) => {
 
         const response = await models.Checksheet.findAll({
             where,
-            order: [["date", "DESC"]],
+            order: [["createdAt", "DESC"]],
             include: [{
                 model: models.ChecksheetDetail,
                 attributes: ["id"],
