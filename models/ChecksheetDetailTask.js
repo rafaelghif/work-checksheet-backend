@@ -7,4 +7,8 @@ export const ChecksheetDetailTask = database.define("ChecksheetDetailTask", {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
+    sequence: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 });

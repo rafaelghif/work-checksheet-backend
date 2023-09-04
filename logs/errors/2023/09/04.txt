@@ -1,0 +1,7 @@
+9/4/2023, 10:10:43 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:10:46 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:10:48 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:10:58 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:11:02 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:11:02 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Locations.sequence' in 'field list'
+9/4/2023, 10:12:45 AM: SequelizeDatabaseError: Unknown column 'ChecksheetDetails->Tasks.sequence' in 'field list'

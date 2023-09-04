@@ -42,13 +42,15 @@ export const createChecksheet = async (req, res) => {
         for (let detailKey in details) {
             const detail = details[detailKey];
             const checksheetDetail = await models.ChecksheetDetail.create({
-                ChecksheetId: checksheet.id
+                ChecksheetId: checksheet.id,
+                sequence: detail.label
             }, { transaction });
 
             for (const key in detail.tasks) {
                 const task = detail.tasks[key];
                 await models.ChecksheetDetailTask.create({
                     TaskId: task,
+                    sequence: detail.label,
                     ChecksheetDetailId: checksheetDetail.id
                 }, { transaction });
             }
@@ -138,10 +140,10 @@ export const getCheckSheet = async (req, res) => {
 
         const response = await models.Checksheet.findAll({
             where,
-            order: [["createdAt", "DESC"]],
+            order: [[models.ChecksheetDetail, "sequence", "ASC"]],
             include: [{
                 model: models.ChecksheetDetail,
-                attributes: ["id"],
+                attributes: ["id", "sequence"],
                 include: [{
                     model: models.Location,
                     attributes: ["id", "name"],

@@ -7,4 +7,8 @@ export const ChecksheetDetail = database.define("ChecksheetDetail", {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
+    sequence: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 });
