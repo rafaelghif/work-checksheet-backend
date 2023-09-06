@@ -140,10 +140,11 @@ export const getCheckSheet = async (req, res) => {
 
         const response = await models.Checksheet.findAll({
             where,
-            order: [[models.ChecksheetDetail, "sequence", "ASC"]],
+            order: [["createdAt", "ASC"]],
             include: [{
                 model: models.ChecksheetDetail,
                 attributes: ["id", "sequence"],
+				order: [[models.ChecksheetDetail, "sequence", "ASC"]],
                 include: [{
                     model: models.Location,
                     attributes: ["id", "name"],
